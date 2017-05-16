@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar hideBackButton="true">
+    <ion-buttons left>
+      <button ion-button clear icon-only color="black" (click)="goBack()">
+        <ion-icon name="arrow-back"> </ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>注册</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="login-page">
+	<form #signupForm="ngForm" novalidate>
+    <ion-list>
+      <ion-item>
+        <ion-label>邀请码</ion-label>
+        <ion-input placeholder="请输入邀请码" clearInput [(ngModel)]="signup.yqcode" name="yqcode" type="text" #yqcode="ngModel" spellcheck="false" autocapitalize="true"
+                   required maxlength="5">
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>密码</ion-label>
+        <ion-input placeholder="请输入6-16位密码" clearInput [(ngModel)]="signup.password" name="password" type="password" #password="ngModel" required>
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>确认密码</ion-label>
+        <ion-input placeholder="请输入6-16位密码" clearInput [(ngModel)]="signup.password2" name="password2" type="password" #password2="ngModel" required>
+        </ion-input>
+      </ion-item>
+      <!--<p [hidden]="password.valid || submitted == false" color="danger" padding-left>-->
+        <!--*该手机曾经注册为买家，您可以沿用原来的密码或重新设置新的密码-->
+      <!--</p>-->
+    </ion-list>
+    <ion-row responsive-sm>
+      <ion-col>
+        <button class="sumit_bnt" ion-button round  default (click)="onSignup(signupForm)" type="submit" block>注册</button>
+      </ion-col>
+    </ion-row>
+	</form>
+</ion-content>

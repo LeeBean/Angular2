@@ -1,0 +1,92 @@
+<ion-header>
+    <ion-navbar hideBackButton="true">
+        <ion-buttons left>
+            <button ion-button clear icon-only color="black" (click)="goBack()">
+                <ion-icon name="arrow-back"></ion-icon>
+            </button>
+        </ion-buttons>
+        <ion-searchbar (ionInput)="getItems($event)" ></ion-searchbar>
+    </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+    <ion-card *ngFor="let item of productList let i =index">
+        <ion-card-content style="border-bottom: 0;padding: 0;" >
+            <div>
+                <div class="product_float" tappable="true"  (click)="productDetail(item)">
+                    <div class="pro_bg">
+                        <img src="{{item.lsimage}}" class="gfgf"  >
+                    </div>
+                    <div class="dong">
+                        <div class="mingzi">
+                            <p class="jjf" >
+                              {{item.productname}}
+                            </p>
+                            <div class="mingziinner">
+                                <p style="margin-top: 5px;color:#545454;">
+                                    <span>商品成本</span>&nbsp;<span style="color:#FB9101;">¥{{item.productcost}}</span>
+                                </p>
+                                <p style="margin-top: 5px;color:#545454;">
+                                    <span>商品利润</span>&nbsp;
+                                    <span style="color:#FB9101;">¥{{item.productprofit}}</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="jjoo"><p class="xiaoliang">¥{{item.productprice}}</p> <p class="jianqian">{{item.howmanybuy}}人分销</p></div>
+                    </div>
+                    <div class="icon-success choose" style="display:none;"></div>
+                </div>
+                <div class="xuanze" *ngIf="parameter.status==0">
+                    <div class="tgsp more" tappable="true"  (click)="present(item,i)">
+                        <span class="icon-more dian"></span>
+                    </div>
+                    <div class="tgsp pshare" tappable="true" (click)="shareProduct(item)">
+                        推广商品
+                    </div>
+                    <div class="tgsp buymyself" tappable="true" (click)="buyMyself(item)">
+                        自己买
+                    </div>
+                </div>
+                <div class="xuanze" *ngIf="parameter.status==1">
+                    <div class="tgsp pshare" tappable="true" (click)="changePrice(item,i)">
+                        更改价格
+                    </div>
+                    <div class="tgsp buymyself" tappable="true" (click)="xiajia(item,i)">
+                        下架
+                    </div>
+                </div>
+                <div class="xuanze" *ngIf="parameter.status==2">
+                    <div class="tgsp pshare" tappable="true" (click)="delproduct(item,i)">
+                        删除商品
+                    </div>
+                    <div class="tgsp pshare" tappable="true" (click)="changePrice(item,i)">
+                        更改价格
+                    </div>
+                    <div class="tgsp buymyself" tappable="true" (click)="shangjia(item,i)">
+                        上架
+                    </div>
+                </div>
+                 <div class="xuanze" *ngIf="parameter.status==3">
+                    <div class="tgsp pshare" tappable="true" (click)="delproduct2(item,i)">
+                        删除商品
+                    </div>
+                    <div class="tgsp pshare" tappable="true" (click)="buyMyself(item,i)">
+                        自己买
+                    </div>
+                    <div class="tgsp buymyself" tappable="true" (click)="shangjia2(item,i)">
+                        上架
+                    </div>
+                </div>
+            </div>
+        </ion-card-content>
+    </ion-card>
+    <!--<p *ngIf="productList==null || productList .length==0" style="text-align: center">
+        无符合条件的数据
+    </p>-->
+    <ion-infinite-scroll *ngIf="hasMore" (ionInfinite)="moreInfo($event)">
+      <ion-infinite-scroll-content loadingSpinner="circles" loadingText="加载更多...">
+      </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+
+</ion-content>

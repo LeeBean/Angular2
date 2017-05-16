@@ -1,0 +1,302 @@
+<ion-header>
+    <ion-navbar hideBackButton="true">
+        <ion-buttons left>
+            <button ion-button clear icon-only color="black" (click)="goBack()">
+                <ion-icon name="arrow-back"> </ion-icon>
+            </button>
+        </ion-buttons>
+        <!--<ion-title>商品详情</ion-title>-->
+        <ion-buttons end>
+            <img style="width: 20px; margin-right: 5px;" src="assets/images/icon_fenxiang.png" tappable="true" (click)="shareMarketProduct()">
+        </ion-buttons>
+    </ion-navbar>
+    <ion-toolbar no-border-top style="margin-left: 15%;width: 70%;margin-top: -44px;">
+        <ion-segment>
+            <ion-segment-button value="product" (click)="onSegmentChanged(1)" class="{{tabnum==1?'segment-button segment-activated':'segment-button'}}">
+                商品
+            </ion-segment-button>
+            <ion-segment-button value="sucai" (click)="onSegmentChanged(2)" class="{{tabnum==2?'segment-button segment-activated':'segment-button'}}">
+                素材
+            </ion-segment-button>
+        </ion-segment>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [ngSwitch]="tabnum">
+    <div *ngSwitchCase=1>
+        <div class="infoimg">
+            <ion-slides #mySlide pager loop="true" autoplay="3000">
+                <ion-slide>
+                    <img src="http://www.jikeduo.com.cn/upload/page/148791361899944.jpg" style="width:100%;height:100%;">
+                </ion-slide>
+                <ion-slide>
+                    <img src="http://www.jikeduo.com.cn/upload/page/148791361899944.jpg" style="width:100%;height:100%;">
+                </ion-slide>
+                <ion-slide>
+                    <img src="http://www.jikeduo.com.cn/upload/page/148791361899944.jpg" style="width:100%;height:100%;">
+                </ion-slide>
+                <ion-slide>
+                    <img src="http://www.jikeduo.com.cn/upload/page/148791361899944.jpg" style="width:100%;height:100%;">
+                </ion-slide>
+            </ion-slides>
+        </div>
+        <div class="infoprice">
+            <p class="pdname">BabyGanics(甘尼克) 奶瓶清洁消毒液橘子味 16oz/473ml 【美国直邮】</p>
+            <div class="pdlirn" style="margin-top: 10px;font-size: 12px;font-weight: bold;position: relative;">
+                <p>
+                    <span style="font-size: 15px;">¥299／</span>
+                    <span style="color: #fe5000;">赚 12.50</span>
+                </p>
+
+                <p class="shoujia">
+                    <span>售价：¥2772</span>
+                    <span style="margin: 0 10px;">|</span>
+                    <span tappable="true" (click)="changePirce()">改价</span>
+                    <span class="icon-x16_icon_arrow_right"></span>
+                </p>
+            </div>
+            <p class="pdlirn" style="margin-top: 15px;font-size: 12px;">
+                <span>在售人数：2344</span>
+            </p>
+            <div>
+                <p class="biaoqian">
+                    <span class="icon-fgou"></span>
+                    <span class="mf">海外商品</span>
+                </p>
+                <p class="biaoqian">
+                    <span class="icon-fgou"></span>
+                    <span class="mf">美国进口</span>
+                </p>
+                <p class="biaoqian">
+                    <span class="icon-fgou"></span>
+                    <span class="mf">美国进口</span>
+                </p>
+                <p class="biaoqian">
+                    <span class="icon-fgou"></span>
+                    <span class="mf">美国进口</span>
+                </p>
+            </div>
+
+        </div>
+        <!--<ion-item>-->
+        <!--<ion-label>配送至：</ion-label>-->
+        <!--<ion-select [(ngModel)]="chooseprovince" okText="确定" cancelText="取消"  (ionChange)="selectCity(1)">-->
+        <!--<ion-option *ngFor="let locale of locales; let i = index"  >{{locale.name}}</ion-option>-->
+        <!--</ion-select>-->
+        <!--<ion-select  [(ngModel)]="choosecity" okText="确定" cancelText="取消" (ionChange)="selectCity(1, true)">-->
+        <!--<ion-option *ngFor="let city of citys; let j = index" >{{city.name}}</ion-option>-->
+        <!--</ion-select>-->
+        <!--<ion-select  [(ngModel)]="choosearea" okText="确定" cancelText="取消">-->
+        <!--<ion-option  *ngFor="let item of areas;">{{item}}</ion-option>-->
+        <!--</ion-select>-->
+        <!--</ion-item>-->
+        <!--<div class="selectitem">
+            <span>配送至：</span>
+            <select [(ngModel)]="provInceindex" (change)="selectCity(1)">
+                <option *ngFor="let locale of locales; let i = index" value="{{i}}">{{locale.name}}</option>
+            </select>
+            <select [(ngModel)]="cityIndex" (change)="selectCity(2)">
+                <option *ngFor="let city of citys; let j = index"  value="{{j}}" >{{city.name}}</option>
+            </select>
+            <select [(ngModel)]="areaIndex" (change)="selectCity(3)">
+                <option  *ngFor="let item of areas;let m = index" value="{{m}}">{{item}}</option>
+            </select>
+        </div>-->
+        <ion-item class="selectitem">
+            <ion-label>配送至：</ion-label>
+            <city-picker item-content [cancelText]="'取消'" [doneText]="'确定'" [separator]="' - '" [citiesData]="cityData" [(ngModel)]="cityName" (ionChange)="cityChange($event)">
+
+            </city-picker>
+        </ion-item>
+
+        <div class="peisong">
+            <p class="listitem"><span class="listitemp1">重量：2344g</span><span class="listitemp2">（首重700g/10元 续重600g/10元）</span></p>
+            <p class="listitem"><span class="listitemp1">运费：19元</span></p>
+        </div>
+        <div style="margin-bottom: 10px">
+            <button ion-item>
+                <span>说明：</span>
+                
+                <span class="mf"><span class="icon-dian "></span>税率:11.9%</span>
+                <span class="mf"><span class="icon-dian "></span>支持7天无理由退货</span>
+                <span class="mf"><span class="icon-dian "></span>海外直邮购</span>
+            </button>
+        </div>
+        <ion-toolbar no-border-top>
+            <ion-segment [(ngModel)]="tab">
+                <ion-segment-button value="jiesao" class="segment-button segment-activated">
+                    产品介绍
+                </ion-segment-button>
+
+                <ion-segment-button value="xuzhi">
+                    购买须知
+                </ion-segment-button>
+            </ion-segment>
+        </ion-toolbar>
+        <div [ngSwitch]="tab">
+            <ion-list *ngSwitchCase="'jiesao'">
+                <ul>
+                    <li>
+                        <img class="listimg" src="../../assets/images/thumbnail-puppy-4.jpg" />
+                    </li>
+                    <li>
+                        <img class="listimg" src="../../assets/images/thumbnail-puppy-4.jpg" />
+                    </li>
+                    <li>
+                        <img class="listimg" src="../../assets/images/thumbnail-puppy-4.jpg" />
+                    </li>
+                </ul>
+            </ion-list>
+            <ion-list *ngSwitchCase="'xuzhi'">
+                <div class="lx">
+                    <p class="pdlics" style="margin-top: 10px"> 企业qq<span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                        <span style="color:#000;">4000639939</span>
+                    </p>
+                    <p class="pdlics">
+                        <span>微信号&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                        <span style="color: #000;">15000271836</span>
+                    </p>
+                    <p class="pdlics">
+                        <span>企业服务号&nbsp;&nbsp;</span>
+                        <span style="color: #000;">集客多商家服务</span>
+                    </p>
+                    <p class="pdlics">
+                        <span>客服电话&nbsp; </span><span style="color: #000;">4000639939</span>
+                    </p>
+                    <p class="pdlics">
+                        <span>售后政策&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                        <span style="color: #000;font-size: 12px;">如有问题请致电客服</span>
+                    </p>
+                    <p class="pdlifx">
+                        <span>分销政策待定&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    </p>
+                </div>
+            </ion-list>
+        </div>
+        <div class="foot">
+            <p class="foottab"><img src="assets/images/icon_gouwuche.png" style="width: 21px"></p>
+            <p class="foottab2" style="background: #FB5D6C">购买</p>
+            <p class="foottab" style="background: #FE5000">出售</p>
+        </div>
+    </div>
+    <!--素材部分-->
+    <div *ngSwitchCase=2>
+        <ion-item>
+            <div item-left="">
+                <img src="http://www.jikeduo.com.cn/upload/images/000/000/001/201608/57bd60c032109.jpg" style="width: 70px">
+            </div>
+            <div class="sucaip">
+                <p>iFona菲奥娜彩色持久液体口红 亮彩珊 瑚豆沙裸粉半糖蜜桃可选</p>
+
+            </div>
+            <div style="margin-top: 15px;">
+                <p class="ptag">色彩绚丽</p>
+                <p class="ptag">色彩绚丽</p>
+                <p class="ptag">色彩绚丽</p>
+                <p class="ptag">色彩绚丽</p>
+                <p class="ptag">色彩绚丽</p>
+                <p class="ptag">色彩绚丽</p>
+                <p class="ptag">色彩绚丽</p>
+            </div>
+        </ion-item>
+        <div class="sucaitab">
+            <div class="sucaitabitem choosed">商品宣传</div>
+            <div class="sucaitabitem">买家答疑</div>
+            <div class="sucaitabitem">晒单促销</div>
+        </div>
+        <div>
+            <div class="xclist">
+                <div class="xcimgs">
+                    <ion-scroll scrollX="true" style="height:150px">
+                        <ion-row style="background: #fff;">
+                            <img class="sucaiimg" src="http://www.jikeduo.com.cn/upload/images/000/000/001/201608/57bd60c032109.jpg">
+                            <img class="sucaiimg" src="http://www.jikeduo.com.cn/upload/images/000/000/001/201608/57bd60c032109.jpg">
+                            <img class="sucaiimg" src="http://www.jikeduo.com.cn/upload/images/000/000/001/201608/57bd60c032109.jpg">
+                            <img class="sucaiimg" src="http://www.jikeduo.com.cn/upload/images/000/000/001/201608/57bd60c032109.jpg">
+                            <img class="sucaiimg" src="http://www.jikeduo.com.cn/upload/images/000/000/001/201608/57bd60c032109.jpg">
+                            <img class="sucaiimg" src="http://www.jikeduo.com.cn/upload/images/000/000/001/201608/57bd60c032109.jpg">
+                            <img class="sucaiimg" src="http://www.jikeduo.com.cn/upload/images/000/000/001/201608/57bd60c032109.jpg">
+                        </ion-row>
+                    </ion-scroll>
+                </div>
+                <div class="sucaiwenzi">
+                    <p>越夜越美丽，经常被彩妆博主翻牌子的钻光粉底液，顾名思义，主打光泽感v</p>
+                </div>
+                <div class="bottompop">
+                    <button class="bbnt borderright" (click)="closebottom()">复制文字</button>
+                    <button class="bbnt borderright" (click)="goproduct()">保存图片</button>
+                    <button class="bbnt" (click)="pmanagent()">复制链接</button>
+                </div>
+            </div>
+            <div class="xclist">
+                <div class="xcimgs">
+                    <ion-scroll scrollX="true" style="height:150px">
+                        <ion-row style="background: #fff;">
+                            <img class="sucaiimg" src="http://www.jikeduo.com.cn/upload/images/000/000/001/201608/57bd60c032109.jpg">
+                            <img class="sucaiimg" src="http://www.jikeduo.com.cn/upload/images/000/000/001/201608/57bd60c032109.jpg">
+                            <img class="sucaiimg" src="http://www.jikeduo.com.cn/upload/images/000/000/001/201608/57bd60c032109.jpg">
+                            <img class="sucaiimg" src="http://www.jikeduo.com.cn/upload/images/000/000/001/201608/57bd60c032109.jpg">
+                            <img class="sucaiimg" src="http://www.jikeduo.com.cn/upload/images/000/000/001/201608/57bd60c032109.jpg">
+                            <img class="sucaiimg" src="http://www.jikeduo.com.cn/upload/images/000/000/001/201608/57bd60c032109.jpg">
+                            <img class="sucaiimg" src="http://www.jikeduo.com.cn/upload/images/000/000/001/201608/57bd60c032109.jpg">
+                        </ion-row>
+                    </ion-scroll>
+                </div>
+                <div class="sucaiwenzi">
+                    <p>越夜越美丽，经常被彩妆博主翻牌子的钻光粉底液，顾名思义，主打光泽感v</p>
+                </div>
+                <div class="bottompop">
+                    <button class="bbnt borderright" (click)="closebottom()">复制文字</button>
+                    <button class="bbnt borderright" (click)="goproduct()">保存图片</button>
+                    <button class="bbnt" (click)="pmanagent()">复制链接</button>
+                </div>
+            </div>
+            <div class="xclist">
+                <div class="xcimgs">
+                    <ion-scroll scrollX="true" style="height:150px">
+                        <ion-row style="background: #fff;">
+                            <img class="sucaiimg" src="http://www.jikeduo.com.cn/upload/images/000/000/001/201608/57bd60c032109.jpg">
+                            <img class="sucaiimg" src="http://www.jikeduo.com.cn/upload/images/000/000/001/201608/57bd60c032109.jpg">
+                            <img class="sucaiimg" src="http://www.jikeduo.com.cn/upload/images/000/000/001/201608/57bd60c032109.jpg">
+                            <img class="sucaiimg" src="http://www.jikeduo.com.cn/upload/images/000/000/001/201608/57bd60c032109.jpg">
+                            <img class="sucaiimg" src="http://www.jikeduo.com.cn/upload/images/000/000/001/201608/57bd60c032109.jpg">
+                            <img class="sucaiimg" src="http://www.jikeduo.com.cn/upload/images/000/000/001/201608/57bd60c032109.jpg">
+                            <img class="sucaiimg" src="http://www.jikeduo.com.cn/upload/images/000/000/001/201608/57bd60c032109.jpg">
+                        </ion-row>
+                    </ion-scroll>
+                </div>
+                <div class="sucaiwenzi">
+                    <p>越夜越美丽，经常被彩妆博主翻牌子的钻光粉底液，顾名思义，主打光泽感v</p>
+                </div>
+                <div class="bottompop">
+                    <button class="bbnt borderright" (click)="closebottom()">复制文字</button>
+                    <button class="bbnt borderright" (click)="goproduct()">保存图片</button>
+                    <button class="bbnt" (click)="pmanagent()">复制链接</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="action-sheet" [hidden]="isshowsheet">
+        <div class="ion-backdrop"></div>
+        <div class="sheet-wrapper">
+            <div class="action-sheet-container">
+                <span class="icon-x xclose" tappable="true" (click)="colseMode()"></span>
+                <p>设置售价</p>
+                <p class="setpricep">
+                    <span>售价（¥）</span>
+                    <input class="setprice" value="123" type="number">
+                </p>
+                <p class="shh-gs">
+                    <span>成本：¥200</span>
+                    <span style="text-align: center">最低售价</span>
+                    <span style="text-align: right">推荐售价：¥200</span>
+                </p>
+                <p style="color: #FE5000;display: flex;display: -webkit-flex">
+                    <span>赚（¥）</span>
+                    <span style="flex: 1;text-align: right;">45</span>
+                </p>
+                <button class="subbnt">确认代理</button>
+            </div>
+        </div>
+    </div>
+</ion-content>

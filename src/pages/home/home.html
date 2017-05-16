@@ -1,0 +1,70 @@
+<!--<ion-header>-->
+  <!--<ion-navbar>-->
+    <!--<ion-title>Home</ion-title>-->
+  <!--</ion-navbar>-->
+<!--</ion-header>-->
+<ion-content>
+  <div  class="home_top">
+    <div >
+      <img src="{{shop.logo}}" class="headpic" />
+      <p class="shopname" >{{shop.name}}</p>
+    </div>
+  </div>
+  <div class="flex-wrp">
+    <div class="flex-item" tappable="true" (click)="goweidian()">
+      <img class="tabimg" src="assets/images/home/icon_dianpu.png" />
+      <div >店铺</div>
+    </div>
+    <div class="flex-item" tappable="true" (click)="xuanhuo()">
+      <img class="tabimg" src="assets/images/home/icon_shangjia.png" />
+      <div >选货上架</div>
+    </div>
+    <div class="flex-item" tappable="true" (click)="shareshop()">
+      <img class="tabimg" src="assets/images/home/icon_fenxiang.png" />
+      <div >分享</div>
+    </div>
+  </div>
+  <div class="header_gn" style="text-align: center; padding-top: 20px;">
+    <p class="leijishouyinum" id="leijsynum">￥{{homedata.leijisy}}</p>
+    <p class="leijishoyi">累计收益</p>
+  </div>
+  <div class="header_info">
+    <div  class="top_li">
+      <p class="yun">{{homedata.zuorilf}}</p>
+      <p class="mun">昨日来访</p>
+    </div>
+    <div  class="mi_li">
+      <p class="yun">{{homedata.leijiorder}}</p>
+      <p class="mun">累计订单</p>
+    </div>
+    <div  class="top_li">
+      <p class="yun">￥{{homedata.leijixiaoshou}}</p>
+      <p class="mun">累计销售</p>
+    </div>
+  </div>
+  <div style="margin-top: 10px;">
+    <ul class="mainmenu">
+      <li id="manage" tappable="true" (click)="myStore()"><a href="#"><b><p><img src="assets/images/home/icon_dianpuguanli.png" style="width:26px;height:25px;"/></p></b><span>店铺管理</span></a></li>
+      <li id="product" tappable="true" (click)="productManagement()"><a href="#"><b><p><img src="assets/images/home/icon_shangpin.png" style="width:25px;height:27px;" /></p></b><span>商品管理</span></a></li>
+      <li id="indent" tappable="true" (click)="orderList()"><a href="#"><b><p><img src="assets/images/home/icon_dingdanx.png" style="width:24px;height:25px;" /></p></b><span>订单管理</span></a></li>
+      <li id="income" tappable="true" (click)="earningRecord()"><a href="#"><b><p><img src="assets/images/home/icon_yingshou.png" style="width:25px;height:25px;" /></p></b><span>财务管理</span></a></li>
+      <li id="serve" tappable="true" (click)="customService()"><a href="#"><b><p><img src="assets/images/home/iphone.png" style="width:23px;height:25px;" /></p></b><span>联系客服</span></a></li>
+      <li id="xiaxian" tappable="true" (click)="team()"><a href="#"><b><p><img src="assets/images/home/icon_tuandui.png" style="width:27px;height:25px;" /></p></b><span>团队管理</span></a></li>
+    </ul>
+  </div>
+  <ion-card>
+    <img src="assets/images/home/banner@2x.png" (click)="new()"/>
+  </ion-card>
+  <div [hidden]="isnewshop">
+    <div class="weui_mask_transition weui_fade_toggle"></div>
+    <div class="action_show">
+      <div class="icon-iconfont-x action_close" (click)="closeMode()"></div>
+      <div class="action_top1">创建店铺成功</div>
+      <div class="action_top2">您的店铺尚没有商品，您可选择</div>
+      <div class="action_tab">
+        <div class="action_tab_left" (click)="pttuijian()"><p><span class="icon-jian"></span></p><p>平台推荐</p></div>
+        <div class="action_tab_right" (click)="qqpihuo()"><p><span class="icon-wuliu"></span></p><p>前去批货</p></div>
+      </div>
+    </div>
+  </div>
+</ion-content>

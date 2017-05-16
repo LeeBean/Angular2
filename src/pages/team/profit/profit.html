@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar hideBackButton="true">
+    <ion-buttons left>
+      <button ion-button clear icon-only color="black" (click)="goBack()">
+        <ion-icon name="arrow-back"> </ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>下线详情</ion-title>
+  </ion-navbar>
+	<div class="list_txt">
+		<p class="left">下线</p>
+		<p class="right"><img class="huizhang" src="assets/images/huizhang.png"><span>贡献分成</span></p>
+	</div>
+</ion-header>
+<ion-content>
+	<div class="nen"  >
+		<ul>
+			<li *ngFor="let item of subRecodeList">
+				<div class="lefts">
+					<p class="lefts_txt">{{item.sub_name}}</p>
+					<p class="shop_num">店铺数：{{item.sub_store_num}}</p>
+				</div>
+				<p class="right_num">￥{{item.top_profit}}</p>
+			</li>
+
+		</ul>
+  </div>
+	<p *ngIf="subRecodeList==null || subRecodeList .length==0" style="text-align: center;color: #666;">
+		没有查询到相关数据
+	</p>
+	<ion-infinite-scroll *ngIf="hasMore" (ionInfinite)="moreInfo($event)">
+		<ion-infinite-scroll-content loadingSpinner="circles" loadingText="加载更多...">
+		</ion-infinite-scroll-content>
+	</ion-infinite-scroll>
+</ion-content>

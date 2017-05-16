@@ -1,0 +1,40 @@
+
+<ion-header>
+  <ion-navbar hideBackButton="true">
+    <ion-buttons left>
+      <button ion-button clear icon-only color="black" (click)="goBack()">
+        <ion-icon name="arrow-back"> </ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>店铺信息</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="saveShopInfo()">
+        <ion-icon>保存</ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-list >
+    <ion-item style="margin-bottom:10px">
+      <ion-label  >店铺名称</ion-label>
+      <ion-input placeholder="请输入店铺名称" clearInput type="text" [(ngModel)]="shop.name" name="name" value="{{shop.name}}" spellcheck="false"  autocapitalize="true" required>
+      </ion-input>
+    </ion-item>
+    <ion-item >
+      <ion-label  >联系人</ion-label>
+      <ion-input placeholder="请输入联系人" clearInput type="text" [(ngModel)]="shop.linkman" name="linkman"   value="{{shop.linkman}}" spellcheck="false"  autocapitalize="true" required>
+      </ion-input>
+    </ion-item>
+    <ion-item >
+      <ion-label  >手机号</ion-label>
+      <ion-input placeholder="请输入手机号" clearInput type="text"  [(ngModel)]="shop.tel" name="tel"  value="{{shop.tel}}" spellcheck="false"  autocapitalize="true" required>
+      </ion-input>
+    </ion-item>
+    <ion-item >
+      <ion-label  >QQ</ion-label>
+      <ion-input placeholder="请输入QQ" clearInput type="text"   [(ngModel)]="shop.qq" name="qq" value="{{shop.qq}}" spellcheck="false"  autocapitalize="true" required>
+      </ion-input>
+    </ion-item>
+  </ion-list>
+</ion-content>

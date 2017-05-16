@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-navbar hideBackButton="true">
+    <ion-buttons left>
+      <button ion-button clear icon-only color="black" (click)="goBack()">
+        <ion-icon name="arrow-back"> </ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>店铺邀请码</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-list >
+    <ion-item style="border: none;">
+      {{shop.yqm}}
+      <button ion-button item-right outline (click)="shareYqm()">分享邀请码</button>
+    </ion-item>
+  </ion-list>
+</ion-content>

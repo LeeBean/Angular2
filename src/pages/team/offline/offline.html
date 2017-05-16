@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar hideBackButton="true">
+    <ion-buttons left>
+      <button ion-button clear icon-only color="black" (click)="goBack()">
+        <ion-icon name="arrow-back"> </ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>下线管理</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="offinfo()">
+        <ion-icon>明细</ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+   <ion-item class="sy">
+      <div>
+      	<p class="sy_txt">分成收益</p>
+      	<p class="sy_num">{{sub_profit}}</p>
+      </div>
+   </ion-item>
+   <ion-list  style="margin-top: 10px;">
+      <button ion-item (click)="profit()">下线详情<span class="right">{{sub_number}}人</span></button>
+  </ion-list>
+</ion-content>

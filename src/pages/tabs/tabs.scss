@@ -1,0 +1,64 @@
+page-tabs {
+  .tab-badge{
+    //color: red !important;
+  }
+}
+.tabbar{
+  border-top: 0.55px solid #eee !important;
+  background: #fff !important;
+}
+.tab-button-icon{
+  min-width: 25px !important;
+  height: 25px !important;
+}
+.tab-button-icon[aria-label=home] {
+  background-size: 100% 100%;
+   background-image: url(../assets/images/home/icon_dianpu1.png);
+ }
+.tab-button-icon[aria-label=market] {
+  background-size: 100% 100%;
+  background-image: url(../assets/images/home/icon_shichang1.png);
+}
+.tab-button-icon[aria-label=contact] {
+  background-size: 100% 100%;
+  background-image: url(../assets/images/home/icon_wo1.png);
+}
+.tab-button-icon[class*=home-outline] {
+  background-size: 100% 100%;
+  background-image: url(../assets/images/home/icon_dianpu_2.png);
+}
+.tab-button-icon[class*=market-outline] {
+  background-size: 100% 100%;
+  background-image: url(../assets/images/home/icon_shichang_2.png);
+}
+.tab-button-icon[class*=contact-outline] {
+  background-size: 100% 100%;
+  background-image: url(../assets/images/home/icon_wo_2.png);
+}
+.ion-md-home{
+  background-size: 100% 100%;
+  background-image: url(../assets/images/home/icon_dianpu_2.png) !important;
+}
+.ion-md-home[ng-reflect-is-active=true]{
+  background-size: 100% 100%;
+  background-image: url(../assets/images/home/icon_dianpu1.png) !important;
+}
+.ion-md-market{
+  background-size: 100% 100%;
+  background-image: url(../assets/images/home/icon_shichang_2.png) !important;
+}
+.ion-md-market[ng-reflect-is-active=true]{
+  background-size: 100% 100%;
+  background-image: url(../assets/images/home/icon_shichang1.png) !important;
+}
+.ion-md-contact{
+  background-size: 100% 100%;
+  background-image: url(../assets/images/home/icon_wo_2.png) !important;
+}
+.ion-md-contact[ng-reflect-is-active=true]{
+  background-size: 100% 100%;
+  background-image: url(../assets/images/home/icon_wo1.png) !important;
+}
+.tab-button-icon:before{
+  content: "";
+}

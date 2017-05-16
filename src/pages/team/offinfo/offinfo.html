@@ -1,0 +1,50 @@
+<ion-header>
+    <ion-navbar hideBackButton="true">
+        <ion-buttons left>
+            <button ion-button clear icon-only color="black" (click)="goBack()">
+                <ion-icon name="arrow-back"></ion-icon>
+            </button>
+        </ion-buttons>
+        <ion-title>分成收益</ion-title>
+    </ion-navbar>
+    <ion-toolbar no-border-top>
+        <ion-segment>
+            <ion-segment-button value="待结算" class="segment-button segment-activated" (click)="changeStatus('1')">
+                待结算
+            </ion-segment-button>
+            <ion-segment-button value="已结算" (click)="changeStatus('2')">
+                已结算
+            </ion-segment-button>
+        </ion-segment>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <div class="balance_one" *ngFor="let item of subxqList">
+        <div class="store">
+            <div class="store_one">
+                <div class="solp"><span class="pb_png">
+                    <div class="ji_rou"><span class="icon-shangpu">&nbsp;</span>{{item.order_storeName}}({{item.order_userName}})</div>
+                    </span></div>
+                <div class="time">{{item.order_time}}</div>
+            </div>
+        </div>
+        <div class="goods">
+            <div class="goods_one">
+                <div class="good_zeng"><p class="zengji">{{item.order_productList.order_product}}</p></div>
+                <div class="good_num"><span class="number">数量x{{item.order_productList.product_num}}</span></div>
+            </div>
+            <div class="goods_two">
+                <div class="money"><p class="jine">订单金额： <span class="five_zio"> ￥{{item.order_price}}</span></p></div>
+                <div class="income"><p class="jine">分成收益： <span class="twlei">  ￥{{item.order_profit}}</span></p></div>
+            </div>
+        </div>
+    </div>
+
+    <p *ngIf="subxqList==null || subxqList .length==0" style="text-align: center;color: #666;margin-top: 20px;">
+        没有查询到相关数据
+    </p>
+    <ion-infinite-scroll *ngIf="hasMore" (ionInfinite)="moreInfo($event)">
+        <ion-infinite-scroll-content loadingSpinner="circles" loadingText="加载更多...">
+        </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+</ion-content>

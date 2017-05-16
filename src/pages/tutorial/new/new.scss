@@ -1,0 +1,21 @@
+page-new{
+*{
+    margin: 0;
+    padding: 0;
+}
+ion-list.list.list-ios {
+    margin: 0;
+    
+}
+.txt{
+    color: #333;
+    text-align: justify;
+    margin: 10px;
+}
+.list-ios > .item-block:first-child{
+    border-top:0 !important ;
+}
+.list-ios > .item-block:last-child, .list-ios > .item-wrapper:last-child .item-block{
+    border-bottom:0 !important ;
+}
+}

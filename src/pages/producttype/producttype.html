@@ -1,0 +1,43 @@
+<ion-header>
+    <ion-navbar hideBackButton="true">
+        <ion-buttons left>
+            <button ion-button clear icon-only color="black" (click)="goBack()">
+                <ion-icon name="arrow-back"></ion-icon>
+            </button>
+        </ion-buttons>
+        <ion-title>分类</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-list class="left_div">
+
+            <ul>
+                <li class="leftli3" data-menuid="" (click)="goAllProductList()">全部</li>
+
+                <li *ngFor="let item of categoryGroupList let i=index" class="{{i!=classIndex ? 'leftli' : 'leftli2'}}"  (click)="changeTab(i,item)" >{{item.cat_name}}</li>
+
+            </ul>
+
+    </ion-list>
+    <ion-list class="right_div">
+        <!--<ion-scroll class="right_menu" scrollY="true">-->
+            <div >
+                <div *ngIf="categoryObj && categoryObj.cat_pic"><img src="{{categoryObj.cat_pic}}"style="width:100%"></div>
+                <div class="erckqb erjtap" data-yjiid="" data-erjid="" (click)="goProductList()">
+                    <p><span class="erckqbn1" >查看全部{{categoryObj.cat_name}}</span>
+                        <span class="icon-x16_icon_arrow_right erckqbn2"></span>
+                    </p>
+                    <p></p>
+                </div>
+                <div *ngFor="let item of categoryList" tappable="true" (click)="goProductList(item)" class="rightli erjtap" ><p><img src="{{item.cat_pic}}"  style="width:80px;height:80px;"></p>
+                    <p>{{item.cat_name}}</p>
+                </div>
+
+
+            </div>
+        <!--</ion-scroll>-->
+    </ion-list>
+
+
+</ion-content>

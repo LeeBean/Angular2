@@ -1,0 +1,40 @@
+<ion-header>
+    <ion-navbar hideBackButton="true">
+        <ion-buttons left>
+            <button ion-button clear icon-only color="black" (click)="goBack()">
+                <ion-icon name="arrow-back"></ion-icon>
+            </button>
+        </ion-buttons>
+        <ion-title>提现记录</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <div class="balance_one" *ngFor="let item of widthdrawrecodeList">
+        <div class="store">
+            <div class="store_one">
+                <div class="solp">
+                    <div class="time">{{item.present_time}}</div>
+                </div>
+                <div class="time" *ngIf="item.pass_status==1">状态：审核中</div>
+                <div class="time" *ngIf="item.pass_status==2">状态：成功</div>
+                <div class="time" *ngIf="item.pass_status==3">状态：失败</div>
+            </div>
+        </div>
+        <div class="goods">
+            <div style="margin: 13px;">
+                <p>提现金额：<span class="twlei">￥{{item.present_money}}</span></p>
+                <p  *ngIf="item.pass_status==2" style="color: #777777;font-size: 13px;">审核通过时间:{{item.pass_time}}</p>
+                <p  *ngIf="item.pass_status==2" style="color: #777777;font-size: 13px;">款项会在3-5个工作日汇出，具体到账日期因各银行系统差异决定，集客多不能保证。</p>
+                <p  *ngIf="item.pass_status==3" style="color: #777777;font-size: 13px;">{{item.pass_bak}}</p>
+            </div>
+        </div>
+    </div>
+
+    <p *ngIf="widthdrawrecodeList==null || widthdrawrecodeList .length==0" style="text-align: center;color: #666;">
+        没有查询到相关数据
+    </p>
+    <ion-infinite-scroll *ngIf="hasMore" (ionInfinite)="moreInfo($event)">
+        <ion-infinite-scroll-content loadingSpinner="circles" loadingText="加载更多...">
+        </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+</ion-content>

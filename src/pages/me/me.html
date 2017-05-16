@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      我的
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="me-card">
+
+    <ion-card-header style="padding: 15px 0 15px 10px">
+      <button ion-item  (click)="goToMyShop()">
+        <ion-avatar item-left>
+          <img src="{{shop.logo}}">
+        </ion-avatar>
+        <div detail-none>{{shop.name}}</div>
+      </button>
+    </ion-card-header>
+
+  </ion-card>
+
+  <ion-list >
+      <button ion-item (click)="chooseShop()">切换店铺</button>
+      <button ion-item (click)="modifyPwd()" style="margin-bottom:10px">修改密码</button>
+      <button [hidden]="loginuser.is_yqm==0" ion-item (click)="shareYqm()" style="margin-bottom:10px">邀请码分享</button>
+      <button ion-item (click)="exitSystem()" style="border-bottom:0" >退出登录</button>
+  </ion-list>
+</ion-content>

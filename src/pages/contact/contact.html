@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Form
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <!--{{diagnostic}}-->
+  <div  [hidden]="submitted">
+  <form (ngSubmit)="onSubmit()" #userForm="ngForm">
+    <ion-list>
+      <ion-item>
+        <ion-label color="primary">用户名</ion-label>
+        <ion-input placeholder="Text Input" clearInput id="username"  [(ngModel)]="model.username" name="username"  #name="ngModel"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="primary">电&nbsp;&nbsp;&nbsp;话</ion-label>
+        <ion-input type="tel" placeholder="Tel Input" clearInput id="tel"  [(ngModel)]="model.tel" name="tel"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="primary">密&nbsp;&nbsp;&nbsp;码</ion-label>
+        <ion-input type="password" placeholder="Password Input" clearInput id="pwd"  [(ngModel)]="model.pwd" name="pwd"></ion-input>
+      </ion-item>
+
+    </ion-list>
+    <button ion-button color="light" type="submit" [disabled]="!userForm.form.valid">提交</button>
+    <button ion-button color="light" type="button" [class]="badCurly" [style.color] = "isSpecial?'red': 'green'" [style.background-color]="canSave?'#FB9101': 'grey'" (click)="newUser();">新建</button>
+  </form>
+  </div>
+  <div [hidden]="!submitted">
+    <h2>提交对数据如下:</h2>
+    <div class="row">
+      <div class="col-xs-3">用户名</div>
+      <div class="col-xs-9  pull-left">{{ model.username }}</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3">电话</div>
+      <div class="col-xs-9 pull-left">{{ model.tel }}</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3">密码</div>
+      <div class="col-xs-9 pull-left">{{ model.pwd }}</div>
+    </div>
+    <br>
+    <button ion-button color="light" type="button"  (click)="submitted=false">编辑</button>
+  </div>
+</ion-content>

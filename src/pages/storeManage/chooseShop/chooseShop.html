@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar hideBackButton="true">
+    <ion-buttons left>
+      <button ion-button clear icon-only color="black" (click)="goBack()">
+        <ion-icon name="arrow-back"> </ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>选择店铺</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="addShop()">
+        <ion-icon>添加</ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list >
+
+  <button ion-item *ngFor="let item of shopList" (click)="userShop($event, item)">
+    {{item.name}}
+    <div class="shop_tag{{item.flag}}">{{item.status}}</div>
+
+  </button>
+  </ion-list>
+
+</ion-content>

@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova-plugin-jkd" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>JkdPlugin</name>
+    <js-module name="JkdPlugin" src="www/JkdPlugin.js">
+        <clobbers target="JkdPlugin" />
+    </js-module>
+    <platform name="android">
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="JkdPlugin">
+                <param name="android-package" value="com.webapp.jkd.cordova.JkdPlugin" />
+                <param name="onload" value="true" />
+            </feature>
+        </config-file>
+        <source-file src="src/android/JkdPlugin.java" target-dir="src/com/webapp/jkd/cordova" />
+    </platform>
+    
+    <platform name="ios">
+        <config-file parent="/*" target="config.xml">
+            <feature name="JkdPlugin">
+                <param name="ios-package" value="JkdPlugin" />
+            </feature>
+        </config-file>
+        
+        <framework src="CoreLocation.framework"/>
+        <framework src="Photos.framework"/>
+        
+        <header-file src="src/ios/JkdPlugin.h"/>
+        <source-file src="src/ios/JkdPlugin.m" />
+    </platform>
+</plugin>

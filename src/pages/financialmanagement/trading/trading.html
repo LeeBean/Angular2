@@ -1,0 +1,83 @@
+<ion-header>
+  	<ion-navbar hideBackButton="true">
+		<ion-buttons left>
+		  <button ion-button clear icon-only color="black" (click)="goBack()">
+			<ion-icon name="arrow-back"></ion-icon>
+		  </button>
+		</ion-buttons>
+		<ion-title>{{tradpageTitle}}</ion-title>
+		<ion-buttons end>
+			<button ion-button (click)="syshuoming()">
+				<ion-icon>收益说明</ion-icon>
+			</button>
+		</ion-buttons>
+  	</ion-navbar>
+	<ion-toolbar no-border-top>
+		<ion-segment *ngIf="userrole==2">
+			<ion-segment-button value="分销收益"  class="segment-button segment-activated" (click)="changeStatus('1')">
+				分销收益
+			</ion-segment-button>
+			<ion-segment-button value="下线分成" (click)="changeStatus('2')">
+				下线分成
+			</ion-segment-button>
+		</ion-segment>
+
+		<ion-segment *ngIf="userrole==3">
+			<ion-segment-button value="分销收益"  class="segment-button segment-activated" (click)="changeStatus('1')">
+				分销收益
+			</ion-segment-button>
+			<ion-segment-button value="供货回款" (click)="changeStatus('3')">
+				供货回款
+			</ion-segment-button>
+		</ion-segment>
+		<ion-segment *ngIf="userrole==4">
+			<ion-segment-button value="分销收益"  class="segment-button segment-activated" (click)="changeStatus('1')">
+				分销收益
+			</ion-segment-button>
+			<ion-segment-button value="下线分成" (click)="changeStatus('2')">
+				下线分成
+			</ion-segment-button>
+			<ion-segment-button value="供货回款" (click)="changeStatus('3')">
+				供货回款
+			</ion-segment-button>
+		</ion-segment>
+
+	</ion-toolbar>
+</ion-header>
+<ion-content>
+	<div class="sylistitem" *ngFor="let item of tradList let i =index">
+	    <div class="balance_one">
+	      	<div class="store">
+	        	<div class="store_one">
+	            	<div class="ji_rou"><span class="icon-shangpu">&nbsp;</span>{{item.store_name}}（{{item.user_name}}）</div>
+	          	</div>
+	          	<div class="time">{{item.order_time}}</div>
+	        </div>
+	  	</div>
+	  	<div class="goods">
+	        <div class="goods_list">
+	          <div class="good_zeng">
+	            <p class="zengji">{{item.product_info[0].name}}</p>
+	            <p class="number">数量x{{item.product_info[0].pro_num}}</p>
+	          </div>
+	        </div>
+	        <div class="goods_buttom">
+	          <div class="shouyizhuant">
+	            <p class="jine" style="line-height: 40px;width: 100px;position: relative;left: 0px;display: inline-block;">状态： <span>{{item.order_status}}</span> </p>
+	            <p style="font-size: 12px;margin-top: -34px;margin-bottom: 0;">订单号： <span>{{item.order_no}}</span></p>
+	          </div>
+	          <div class="shouyi_buttom">
+	            <p class="jine" style="line-height: 40px;"><span>收益:</span><span class="twlei">￥{{item.profit_money}}</span><span>（订单金额</span><span class="five_zio"> ￥{{item.order_money}}）</span>
+	            </p>
+	          </div>
+	        </div>
+	  	</div>
+	</div>
+	<p *ngIf="tradList==null || tradList .length==0" style="text-align: center;color: #666;">
+		没有查询到相关数据
+	</p>
+	<ion-infinite-scroll *ngIf="hasMore" (ionInfinite)="moreInfo($event)">
+		<ion-infinite-scroll-content loadingSpinner="circles" loadingText="加载更多...">
+		</ion-infinite-scroll-content>
+	</ion-infinite-scroll>
+</ion-content>

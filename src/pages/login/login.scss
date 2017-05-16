@@ -1,0 +1,26 @@
+// Styles for all of the user pages:
+// Login, Signup, Support
+
+page-login {
+  .logo {
+    padding: 20px 0;
+    min-height: 200px;
+    text-align: center;
+
+    img {
+      max-width: 150px;
+    }
+  }
+
+  .list {
+    margin-bottom: 0;
+  }
+  .rigth_div{
+      height: 30px ;
+      color: rgb(120, 120, 120);
+      float: right;
+      margin-right: 20px;
+      margin-top: 10px;
+      font-size: 13px;
+  }
+}

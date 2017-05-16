@@ -1,0 +1,89 @@
+<ion-header>
+    <ion-navbar hideBackButton="true">
+        <ion-buttons left>
+            <button ion-button clear icon-only color="black" (click)="goBack()">
+                <ion-icon name="arrow-back"></ion-icon>
+            </button>
+        </ion-buttons>
+        <ion-title>订单管理</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-card>
+        <div class="l_indent_content">
+            <p class="l_indent_content_txt">{{order.orderstatus}}</p>
+        </div>
+        <div class="l_indent_content_top">
+            <p class="l_indent_content_p d">收货人:<span>{{order.revname}}</span></p>
+            <p class="l_indent_content_sh d">收货地址:<span>{{order.revaddress}}</span></p>
+        </div>
+    </ion-card>
+    <ion-card>
+        <div class="l_indent_content_shop">
+            <div class="l_indent_content_shop_top" >
+                <div style="overflow: hidden; border-bottom: 1px solid #eee;" *ngFor="let item of order.productlist">
+                    <img src="{{item.productpic}}"
+                         class="l_indent_content_shop_img"/>
+                    <div class="l_indent_content_shop_div">
+                        <div class="l_indent_content_shop_info">{{item.productname}}</div>
+                        <span class="l_indent_content_shop_bq">{{item.producttype}}</span>
+                    </div>
+                    <div class="l_indent_content_shop_right">
+                        <p class="l_indent_content_shop_num">¥{{item.howmanyprice}}</p>
+                        <p class="l_indent_content_shop_sl">x{{item.num}}</p>
+                        <p class="l_indent_content_shop_jy">{{item.orderstatus}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="l_indent_content_shop_botton" >
+                <ul>
+                    <li>
+                        <div class="l_indent_content_shop_yf"><p class="l_yf_p">运费</p>
+                            <p class="l_yf_num">¥{{order.yunfei}}</p></div>
+                    </li>
+                    <li>
+                        <div class="l_indent_content_shop_yf"><p class="l_yf_p">进口税</p>
+                            <p class="l_yf_num">¥{{order.jinkoushui}}</p></div>
+                    </li>
+                    <li>
+                        <div class="l_indent_content_shop_yf"><p class="l_yf_p">优惠券</p>
+                            <p class="l_yf_num">{{order.youhuiquan}}</p></div>
+                    </li>
+                    <li>
+                        <div class="l_indent_content_shop_fk"><p class="l_fk_p">实际付款（含运费）</p>
+                            <p class="l_fk_num">¥{{order.sjfk}}</p></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </ion-card>
+    <ion-card style="margin-bottom: 60px !important;">
+        <div class="l_indent_content_shop_ddbh">
+            <p class="l_indent_content_shop_bh one">订单编号:<span>{{order.orderno}}</span></p>
+            <p class="l_indent_content_shop_bh two">创建时间:<span>{{order.creattime == 0 ? "--" : (order.creattime|date:'yyyy-MM-dd HH:mm:ss')}}</span></p>
+            <p class="l_indent_content_shop_bh three">付款时间:<span>{{order.paytime == 0 ? "--" : (order.paytime|date:'yyyy-MM-dd HH:mm:ss')}}</span></p>
+            <p class="l_indent_content_shop_bh two">发货时间:<span>{{order.sendtime == 0 ? "--" : (order.sendtime|date:'yyyy-MM-dd HH:mm:ss')}}</span></p>
+            <p class="l_indent_content_shop_bh two">成交时间:<span>{{order.overtime == 0 ? "--" : (order.overtime|date:'yyyy-MM-dd HH:mm:ss')}}</span></p>
+        </div>
+    </ion-card>
+</ion-content>
+
+<div class="footer" *ngIf="showCheck">
+    <div class="plgl2"  (click)="checkTake()">
+        <div >确认收货</div>
+    </div>
+
+</div>
+<div class="footer" *ngIf="showPackage">
+    <div class="plgl2" (click)="goWuliu()" >
+        <div >查看物流</div>
+    </div>
+</div>
+
+<div class="footer" *ngIf="showPay">
+    <div class="plgl2"  >
+        <div>付款</div>
+    </div>
+</div>
+

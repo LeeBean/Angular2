@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar hideBackButton="true">
+    <ion-buttons left>
+      <button ion-button clear icon-only color="black" (click)="goBack()">
+        <ion-icon name="arrow-back"> </ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>更改价格</ion-title>
+    <ion-buttons end>
+      <button ion-button tappable="true" (click)="submitOPr()">
+        <ion-icon>完成</ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+	<div class="texts">
+		<p class="t">标题</p>
+		<textarea class="txt" [(ngModel)]="productInfo.product"  readonly="readonly"></textarea> 
+	</div>
+	<ul>
+		<li>
+			<span class="left">成本价(￥)</span>
+			<input class="num" type="text" [(ngModel)]="productInfo.price" readonly="readonly">
+		</li>
+		<li>
+			<span class="left">最低售价(￥)</span>
+			<input class="num" type="text"[(ngModel)]="productInfo.minprice"  readonly="readonly">
+		</li>
+		<li>
+			<span class="left">零售价(￥)</span>
+			<input class="nums" type="text" [(ngModel)]="productInfo.lsprice" >
+		</li>
+	</ul>
+</ion-content>

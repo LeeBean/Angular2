@@ -1,0 +1,55 @@
+page-priceChange{
+*{
+    margin: 0;
+    padding: 0;
+}
+.texts{
+    width: 100%;
+    background: #fff;
+    height: 100px;	
+}
+.t{
+    float: left;
+    width: 20%;
+    text-align: center;
+    margin-top: 15px;
+}
+.txt{
+    width: 80%;
+    height: 100px;
+    border: 0;
+    text-align: center;
+    padding: 10px;
+}
+ul{
+    margin-top: 10px;
+    margin-bottom: 0px;
+    padding-left: 0px;
+}
+li{
+    list-style-type: none;
+    width: 100%;
+    background: #fff;
+    height: 50px;
+    line-height: 50px;
+    padding-left: 20px;
+    border-bottom: 1px solid #eee;
+}
+.left{
+    float: left;
+    width: 90px;
+}
+span.mi {
+    margin-right: 10px;
+    margin-left: 5px;
+}
+input.num {
+    border: 0;
+    line-height: 30px;
+    color: #999;
+}
+input.nums{
+    border: 0;
+    line-height: 30px;
+}
+}

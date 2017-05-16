@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar hideBackButton="true">
+    <ion-buttons left>
+      <button ion-button clear icon-only color="black" (click)="goBack()">
+        <ion-icon name="arrow-back"> </ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>店铺管理</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+
+  <ion-card class="me-card">
+
+    <ion-card-header style="padding: 10px 0 10px 10px">
+      <button ion-item  (click)="goToMyShop()">
+        <ion-avatar item-left>
+          <img src="{{shop.logo}}" alt="">
+        </ion-avatar>
+        <div detail-none>{{shop.name}}</div>
+      </button>
+    </ion-card-header>
+
+  </ion-card>
+
+  <ion-list [hidden]="is_yqm==0">
+      <button ion-item  (click)="storeInvite()" style="margin-bottom:10px;border: none;">店铺邀请码</button>
+  </ion-list>
+  <p class="warning">电脑登录“集客多“ 立即一键装修店铺、自动上架商品。  登录网址 www.jikeduo.com.cn</p>
+</ion-content>

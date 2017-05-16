@@ -1,0 +1,16 @@
+page-createshop {
+  .me-title{
+    color: red;
+  }
+  .me-card{
+    margin: 0;
+    padding:0;
+    width: 100%;
+    border-bottom: 0px;
+    margin-bottom: 10px;
+    box-shadow: none;
+  }
+  .me-card .item-inner{
+    border-bottom: none !important;
+  }
+}

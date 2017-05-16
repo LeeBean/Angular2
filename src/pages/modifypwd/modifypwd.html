@@ -1,0 +1,44 @@
+<ion-header>
+	<ion-navbar hideBackButton="true">
+    <ion-buttons left>
+      <button ion-button clear icon-only color="black" (click)="goBack()">
+        <ion-icon name="arrow-back"> </ion-icon>
+      </button>
+    </ion-buttons>
+		<ion-title>修改密码</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="modifypwdSubmit()">
+        <ion-icon>确定</ion-icon>
+      </button>
+    </ion-buttons>
+	</ion-navbar>
+</ion-header>
+
+<ion-content class="login-page">
+  <form #signupForm="ngForm" novalidate>
+    <ion-list>
+      <ion-item>
+        <ion-label>原密码</ion-label>
+        <ion-input placeholder="请输入6-16位密码" clearInput [(ngModel)]="passwd.oldpwd" name="oldpwd" type="password" #oldpwd="ngModel" required>
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>密码</ion-label>
+        <ion-input placeholder="请输入6-16位密码" clearInput [(ngModel)]="passwd.newpwd" name="newpwd" type="password" #newpwd="ngModel" required>
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>确认密码</ion-label>
+        <ion-input placeholder="请输入6-16位密码" clearInput [(ngModel)]="passwd.newpwd2" name="newpwd2" type="password" #newpwd2="ngModel" required>
+        </ion-input>
+      </ion-item>
+    </ion-list>
+    <!--<ion-row responsive-sm>-->
+      <!--<ion-col>-->
+        <!--<button class="sumit_bnt" ion-button round  default (click)="submitForgerPwd(signupForm)" type="submit" block>确定</button>-->
+      <!--</ion-col>-->
+    <!--</ion-row>-->
+  </form>
+
+</ion-content>

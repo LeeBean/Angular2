@@ -1,0 +1,129 @@
+openshop{
+  .proshahha {
+    width: 20rem;
+    height: 24rem;
+    background: #fff;
+    margin: auto;
+    position: relative;
+    margin-top: 10rem;
+    border-radius: 12px;
+  }
+  .header_img {
+    position: absolute;
+    z-index: 2;
+    width: 24rem;
+    left: -1.44rem;
+    top: -1.19rem;
+  }
+  .tan_img {
+    width: 100%;
+    height: 8.19rem;
+  }
+  .titledd {
+    position: absolute;
+    top: 2.31rem;
+    text-align: center;
+    width: 100%;
+  }
+  .lever {
+    width: 80%;
+  }
+  .tehui {
+    position: absolute;
+    width: 18rem;
+    top: 5.5rem;
+    left: 1.5rem;
+    line-height: 1.5rem;
+  }
+  .fuwufei {
+    font-size: 1rem;
+    color: #545454;
+  }
+  .days {
+    font-size: 1rem;
+    color: #fb9000;
+  }
+  .fenge {
+    border-bottom: 1px solid #ccc;
+    position: relative;
+    left: 12%;
+    top: 11rem;
+  }
+  .server {
+    position: relative;
+    top: 13.75rem;
+  }
+  .sfbz {
+    position: relative;
+    margin-top: -25px;
+    width: 20rem;
+    text-align: center;
+  }
+  .jishu {
+    font-size: 1rem;
+    color: #545454;
+    line-height: 1.5rem;
+    width: 20rem;
+  }
+  .sfbiaozhun {
+    position: absolute;
+    margin-left: 4rem;
+    margin-top: 0.5rem;
+    width: 100%;
+  }
+  .nianfei {
+    font-size: 1rem;
+    color: #333;
+    line-height: 22px;
+  }
+  .number {
+    color: #666;
+    font-size: 12px;
+  }
+  .tuijian {
+    position: absolute;
+    font-size: 12px;
+    border: 1px solid;
+    width: 30px;
+    height: 15px;
+    color: #fb9000;
+    text-align: center;
+    border-radius: 3px;
+    right: 70px;
+    top: 3px;
+  }
+  .spam {
+    font-size: .69rem;
+    color: #999;
+    line-height: 1.3rem;
+  }
+  .dibubnt {
+    position: absolute;
+    background: #ff512d;
+    height: 3rem;
+    width: 20rem;
+    bottom: 0;
+    border-radius: 0 0 10px 10px;
+    z-index: 100;
+  }
+  .kaidian {
+    color: white;
+    text-align: center;
+    font-size: 1.06rem;
+    line-height: 2.5rem;
+    text-shadow: 1px 1px 1px #aeadad;
+  }
+  .weui_mask_transition {
+    /* display: none; */
+    position: fixed;
+    z-index: 20;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transition: background .3s;
+  }
+  .weui_fade_toggle {
+    background: rgba(0, 0, 0, 0.2);
+  }
+}

@@ -1,0 +1,113 @@
+<ion-header>
+    <ion-navbar hideBackButton="true">
+        <ion-buttons left>
+            <button ion-button clear icon-only color="black" (click)="goBack()">
+                <ion-icon name="arrow-back"></ion-icon>
+            </button>
+        </ion-buttons>
+        <ion-title>商品管理</ion-title>
+        <ion-buttons end>
+            <button ion-button (click)="goSearch()">
+                <ion-icon class="icon-search" style="font-size: 20px;line-height: 45px;"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+    <ion-toolbar no-border-top>
+
+        <ion-segment>
+            <ion-segment-button value="已上架"  class="segment-button segment-activated" (click)="changeStatus('0')">
+                已上架
+            </ion-segment-button>
+            <ion-segment-button value="已售罄" (click)="changeStatus('1')">
+                已售罄
+            </ion-segment-button>
+            <ion-segment-button value="已下架" (click)="changeStatus('2')">
+                已下架
+            </ion-segment-button>
+            <ion-segment-button value="自用商品" (click)="changeStatus('3')">
+                自用商品
+            </ion-segment-button>
+        </ion-segment>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card *ngFor="let item of productList let i =index">
+        <ion-card-content style="border-bottom: 0;padding: 0;" >
+            <div>
+                <div class="product_float" tappable="true"  (click)="productDetail(item)">
+                    <div class="pro_bg">
+                        <img src="{{item.lsimage}}" class="gfgf"  >
+                    </div>
+                    <div class="dong">
+                        <div class="mingzi">
+                            <p class="jjf" >
+                              {{item.productname}}
+                            </p>
+                            <div class="mingziinner">
+                                <p style="margin-top: 5px;color:#545454;">
+                                    <span>商品成本</span>&nbsp;<span style="color:#FB9101;">¥{{item.productcost}}</span>
+                                </p>
+                                <p style="margin-top: 5px;color:#545454;">
+                                    <span>商品利润</span>&nbsp;
+                                    <span style="color:#FB9101;">¥{{item.productprofit}}</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="jjoo"><p class="xiaoliang">¥{{item.productprice}}</p> <p class="jianqian">{{item.howmanybuy}}人分销</p></div>
+                    </div>
+                    <div class="icon-success choose" style="display:none;"></div>
+                </div>
+                <div class="xuanze" *ngIf="parameter.status==0">
+                    <div class="tgsp more" tappable="true"  (click)="present(item,i)">
+                        <span class="icon-more dian"></span>
+                    </div>
+                    <div class="tgsp pshare" tappable="true" (click)="shareProduct(item)">
+                        推广商品
+                    </div>
+                    <div class="tgsp buymyself" tappable="true" (click)="buyMyself(item)">
+                        自己买
+                    </div>
+                </div>
+                <div class="xuanze" *ngIf="parameter.status==1">
+                    <div class="tgsp pshare" tappable="true" (click)="changePrice(item,i)">
+                        更改价格
+                    </div>
+                    <div class="tgsp buymyself" tappable="true" (click)="xiajia(item,i)">
+                        下架
+                    </div>
+                </div>
+                <div class="xuanze" *ngIf="parameter.status==2">
+                    <div class="tgsp pshare" tappable="true" (click)="delproduct(item,i)">
+                        删除商品
+                    </div>
+                    <div class="tgsp pshare" tappable="true" (click)="changePrice(item,i)">
+                        更改价格
+                    </div>
+                    <div class="tgsp buymyself" tappable="true" (click)="shangjia(item,i)">
+                        上架
+                    </div>
+                </div>
+                 <div class="xuanze" *ngIf="parameter.status==3">
+                    <div class="tgsp pshare" tappable="true" (click)="delproduct2(item,i)">
+                        删除商品
+                    </div>
+                    <div class="tgsp pshare" tappable="true" (click)="buyMyself(item,i)">
+                        自己买
+                    </div>
+                    <div class="tgsp buymyself" tappable="true" (click)="shangjia2(item,i)">
+                        上架
+                    </div>
+                </div>
+            </div>
+        </ion-card-content>
+    </ion-card>
+    <p *ngIf="productList==null || productList .length==0" style="text-align: center">
+        暂无数据
+    </p>
+    <ion-infinite-scroll *ngIf="hasMore" (ionInfinite)="moreInfo($event)">
+      <ion-infinite-scroll-content loadingSpinner="circles" loadingText="加载更多...">
+      </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+
+</ion-content>

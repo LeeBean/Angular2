@@ -1,0 +1,116 @@
+page-orderlist {
+  //.tab{
+  //  padding-left: 5px !important;
+  //}
+  .tututu {
+    width: 100%;
+    height: 110px;
+    background-color: #fff;
+    border-bottom: 1px #eaeaea solid;
+    zoom: 1;
+    position: relative;
+  }
+  .jifen {
+    width: 90px;
+    height: 90px;
+    position: absolute;
+    left: 10px;
+  }
+  .ziti {
+    position: relative;
+  }
+  .zjf {
+    color: #545454;
+    font-size: 15px;
+    text-indent: 3px;
+    padding-top: 10px;
+    line-height: 20px;
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    position: relative;
+    left: 120px;
+    width: 40%;
+  }
+  .erwu {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    color: #545454;
+    font-size: 14px;
+  }
+  .qiaoke {
+    margin-top: 5px;
+  }
+  .bang {
+    font-size: 12px;
+    color: #a0a0a0;
+    margin-left: 124px;
+  }
+  .yi {
+    position: absolute;
+    right: 10px;
+    top: 70px;
+    font-size: 12px;
+    color: #8d8da2;
+  }
+  .shiyo {
+    width: 100%;
+    height: 45px;
+    background-color: #fff;
+    position: relative;
+  }
+  .jiaotui {
+    float: right;
+    line-height: 44px;
+    margin-right: 6px;
+    color: #8d8da2;
+    font-size: 11px;
+  }
+  .jiaoti {
+    float: right;
+    line-height: 44px;
+    margin-right: 6px;
+    color: #8d8da2;
+    font-size: 13px;
+  }
+  .jiatui {
+    float: right;
+    line-height: 42px;
+    margin-right: 6px;
+    color: #8d8da2;
+    font-size: 11px;
+  }
+  .ckwul {
+    width: 100%;
+    height: 50px;
+    background-color: #fff;
+    margin-top: -9px;
+  }
+  .gopay {
+    width: 70px;
+    height: 30px;
+    text-align: center;
+    border: 1px #fb9101 solid;
+    border-radius: 17px;
+    color: #fb9101;
+    line-height: 29px;
+    font-size: 12px;
+    position: absolute;
+    right: 25px;
+    margin-top: 7px;
+  }
+  .jygbtag {
+    position: absolute;
+    right: 10px;
+    top: 100px;
+    font-size: 12px;
+    color: #f9b962;
+  }
+  ion-card{
+    width: 100% !important;
+    margin: 0 0 10px 0 !important;
+  }
+}

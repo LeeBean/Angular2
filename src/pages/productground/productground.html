@@ -1,0 +1,43 @@
+<ion-header>
+    <ion-navbar hideBackButton="true">
+        <ion-buttons left>
+            <button ion-button clear icon-only color="black" (click)="goBack()">
+                <ion-icon name="arrow-back"></ion-icon>
+            </button>
+        </ion-buttons>
+        <ion-title>上架到店铺</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <div class="texts">
+        <div class="shangjia2">
+            <img src="{{displayInfo.image}}" class="shangjiaimg">
+        </div>
+        <div class="shangjianame">
+            <p class="sjname" >{{displayInfo.product}}</p>
+            <p  style="margin-top: 20px;">{{displayInfo.fx_number}}人正在分销</p></div>
+    </div>
+    <ul>
+        <li style="margin: 10px 0">
+            <span class="left">建议售价(￥)</span>
+            <input class="num" style="color: #333;"  type="number"  [(ngModel)]="displayInfo.lsprice" name="lsprice">
+        </li>
+        <li>
+            <span class="left">利润(￥)</span>
+            <input class="num" type="number" readonly="readonly" value="{{displayInfo.lsprice-displayInfo.price}}">
+        </li>
+        <li>
+            <span class="left">成本(￥)</span>
+            <input class="num" type="number" readonly="readonly" value="{{displayInfo.price}}">
+        </li>
+        <li>
+            <span class="left">最低售价(￥)</span>
+            <input class="num" type="number" readonly="readonly" value="{{displayInfo.minprice}}">
+        </li>
+    </ul>
+    <div class="foot">
+        <p style="text-align: center;">
+            <button class="dlbnt" (click)="Pagent()">上架到店铺</button>
+        </p>
+    </div>
+</ion-content>

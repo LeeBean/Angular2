@@ -1,0 +1,33 @@
+page-earningRecord{
+*{
+    margin: 0;
+    padding: 0;
+}
+.right{
+    float: right;
+}
+.sy{
+    background: #fe5000;
+    height: 160px;
+    text-align: center;
+}
+.label-ios{
+    margin: 0 !important;
+}
+.txt{
+    display: inline-block;
+}
+.sy_txt{
+    font-size: 15px;
+    color: #fff;    
+}
+.sy_num{
+    color: #fff;
+    font-size: 34px;
+    font-weight: 600;
+    margin-top: 10px;   
+}
+.txt_sm{
+    font-size: 12px;
+}
+}

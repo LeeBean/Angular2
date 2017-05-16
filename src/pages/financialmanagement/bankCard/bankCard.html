@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar hideBackButton="true">
+    <ion-buttons left>
+      <button ion-button clear icon-only color="black" (click)="goBack()">
+        <ion-icon name="arrow-back"> </ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>设置银行卡账户</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="doSubmitdata()">
+        <ion-icon>确定</ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+      <button ion-item (click)="doCheckbox()"><p  class="pp" style="color: #333;">银行</p><input type="text" readonly="readonly" value="{{bank.bankName}}" placeholder="请选择银行" class="ipts"/></button>
+      <button class="but"><p class="pp">开户行</p><input type="text"  [(ngModel)]="creatData.khuhang" placeholder="请输入开户行" class="ipt" maxlength="20"/></button>
+      <button class="but"><p class="pp">卡号</p><input type="number" [(ngModel)]="creatData.cardNo" placeholder="请输入卡号" class="ipt"  maxlength="20"/></button>
+      <button class="but"><p class="pp">姓名</p><input type="text" [(ngModel)]="creatData.name" placeholder="请输入姓名" class="ipt"  maxlength="10"/></button>
+  </ion-list>
+ <p style="width: 96%;margin-left: 2%;color: #666;line-height: 20px;"><span style="color:#fe5000">*</span>银行卡信息属于重要商业信息，一旦设定则无法通过手机更新，请谨慎填写，确保信息正确</p>
+</ion-content>

@@ -1,0 +1,196 @@
+// http://ionicframework.com/docs/v2/theming/
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+h1 {
+    font-size: 1.2em;
+    color: #999;
+    margin-bottom: 0;
+}
+
+h2 {
+    font-size: 2em;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+nav a {
+    padding: 5px 10px;
+    text-decoration: none;
+    margin-top: 10px;
+    display: inline-block;
+    background-color: #eee;
+    border-radius: 4px;
+}
+
+nav a:visited,
+a:link {
+    color: #607D8B;
+}
+
+nav a:hover {
+    color: #039be5;
+    background-color: #CFD8DC;
+}
+
+nav a.active {
+    color: #039be5;
+}
+
+.toolbar-background {
+    background: #fff !important;
+    border-top: 0;
+    border-bottom: 1px solid #eee;
+}
+
+.toolbar-title {
+    //font-size: 19px !important;
+    color: #545454 !important;
+}
+
+ion-item {
+    position: relative !important;
+}
+
+.item-inner {
+    border-bottom: 1px solid #eee !important;
+    font-size: 14px;
+}
+
+.item-input {
+    padding-left: 0 !important;
+}
+
+.item {
+    padding-left: 0 !important;
+}
+
+ion-label {
+    padding-left: 10px !important;
+    min-width: 60px !important;
+    padding-right: 10px !important;
+}
+
+ion-label {
+    color: #545454 !important;
+}
+
+.sumit_bnt {
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 20px;
+}
+
+.scroll-content {
+    background: #eee;
+}
+
+.bar-button {
+    font-size: 14px;
+    color: #545454;
+}
+
+.list-md .item-input:last-child {
+    border-bottom: 0 !important;
+}
+
+.item-divider-md {
+    border-bottom: 0 !important;
+}
+
+.item-md.item-input.ng-invalid.ng-touched:not(.input-has-focus) .item-inner {
+    box-shadow: none !important;
+}
+
+.item-md.item-input.ng-valid.input-has-value:not(.input-has-focus) .item-inner {
+    box-shadow: none !important;
+}
+
+.item-md.item-input.ng-invalid.ng-touched:not(.input-has-focus) .item-inner {
+    box-shadow: none !important;
+}
+
+.item-md.item-input.input-has-focus .item-inner {
+    box-shadow: none !important;
+}
+
+.list-ios>.item-block:first-child {
+    border-top: 0 !important;
+}
+
+.list-md .item-block .item-inner {
+    background-image: url(../assets/images/icon-arrowdown.png);
+    padding-right: 32px;
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    background-size: 14px 14px;
+}
+
+.searchbar-md .searchbar-input {
+    padding: 0px 50px !important;
+    line-height: 32px;
+}
+
+.searchbar-md {
+    background: #ccc !important;
+}
+
+.searchbar-md .searchbar-search-icon {
+    top: 8px !important;
+}
+
+.searchbar-ios .searchbar-search-icon {
+    top: 12px;
+}
+
+.toolbar-md {
+    padding: 0 !important;
+    min-height: 44px !important;
+}
+
+.segment-md .segment-button {
+    border-bottom-width: 1px;
+    border-bottom-color: rgba(0, 0, 0, 0);
+}
+
+.header-md::after {
+    background: #eee;
+    height: 0;
+    background-image: none;
+    bottom: 1px;
+}
+
+.header-ios .toolbar-background-ios,
+.footer-ios .toolbar-background-ios {
+    border-bottom: 1px solid #eee;
+}
+
+.list-ios>.item-block:last-child {
+    border-bottom: 0;
+}
+
+.footer-md::before,
+.tabs-md[tabsPlacement="bottom"]>.tabbar::before {
+    top: -2px;
+    bottom: auto;
+    height: 0 !important;
+    background-position: 0 0;
+}
+
+ion-scroll .scroll-content {
+    background: #fff !important;
+}
+
+::-webkit-scrollbar {
+    display: none !important;
+}

@@ -1,0 +1,29 @@
+page-chooseShop {
+  button{
+    position: relative;
+  }
+  .shop_tag1{
+    width: 60px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 5px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    background-color: #8bc899;
+    color: #fff;
+  }
+  .shop_tag2{
+    width: 60px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 5px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    background-color: #cbcbcb;
+    color: #fff;
+  }
+}

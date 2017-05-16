@@ -1,0 +1,34 @@
+page-goodCard{
+  *{
+        margin: 0;
+        padding: 0;
+    }
+    .but {
+        background: #fff;
+        width: 100%;
+        height: 50px;
+        border-bottom: 1px solid #eee;
+        text-align: initial;
+    }
+    p {
+        float: left;
+        margin-left: 10px;
+        font-size: 1.4rem;
+        color: #333;
+        line-height: 49px;
+        width: 50px;
+    }
+    .ipt {
+        border: 0;
+        margin-left: 10px;
+        line-height: 49px;
+    }
+    .ipts{
+        border: 0;
+        margin-left: 10px;
+        font-size: 13px;
+    }
+    .button-inner{
+        color: #333 !important;
+    }
+}

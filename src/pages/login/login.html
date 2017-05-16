@@ -1,0 +1,38 @@
+<ion-header>
+	<ion-navbar hideBackButton="true">
+		<ion-title>登录</ion-title>
+		<ion-buttons end>
+			<button ion-button (click)="onSignup()">
+				<ion-icon>注册</ion-icon>
+			</button>
+		</ion-buttons>
+	</ion-navbar>
+</ion-header>
+
+<ion-content>
+	<form #loginForm="ngForm" novalidate>
+		<ion-list>
+			<ion-item>
+				<ion-label>账号</ion-label>
+				<ion-input placeholder="请输入您的手机号" clearInput [(ngModel)]="login.phone" name="phone" type="text" #phone="ngModel" spellcheck="false" autocapitalize="off"
+					maxlength="11">
+				</ion-input>
+			</ion-item>
+			<ion-item>
+				<ion-label>密码</ion-label>
+				<ion-input placeholder="请输入6-16位密码" clearInput [(ngModel)]="login.password" name="password" type="password" #password="ngModel" maxlength="16">
+				</ion-input>
+			</ion-item>
+			<!--<p [hidden]="password.valid || submitted == false" color="danger" padding-left>-->
+				<!--Password is required-->
+			<!--</p>-->
+		</ion-list>
+    	<div class="rigth_div" (click)="forgetPwd()">忘记密码</div>
+		<ion-row responsive-sm>
+			<ion-col>
+				<button class="sumit_bnt" ion-button round  default (click)="onLogin(loginForm)" type="submit" block>登录</button>
+			</ion-col>
+		</ion-row>
+	</form>
+
+</ion-content>

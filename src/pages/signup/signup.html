@@ -1,0 +1,45 @@
+<ion-header>
+    <ion-navbar hideBackButton="true">
+        <ion-buttons left>
+            <button ion-button clear icon-only color="black" (click)="goBack()">
+                <ion-icon name="arrow-back"></ion-icon>
+            </button>
+        </ion-buttons>
+        <ion-title>注册</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="login-page">
+    <form #signupForm="ngForm" novalidate>
+        <ion-list>
+            <button ion-item tappable="true"  (click)="chooseCountry()">
+                <ion-label>国家</ion-label>
+                <ion-input placeholder="请选择国家" [(ngModel)]="signup.areaName" name="areaName" type="text"
+                           #areaName="ngModel" readonly="true">
+                </ion-input>
+            </button>
+            <ion-item>
+                <ion-label>{{signup.areaCode}}</ion-label>
+                <ion-input placeholder="请输入手机号" [(ngModel)]="signup.phone" name="phone" type="text" #phone="ngModel" maxlength="11"
+                           required clearInput >
+                </ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label>验证码</ion-label>
+                <ion-input  *ngIf="!signup.hiddenflag"  placeholder="请输入验证码" [(ngModel)]="signup.yzcode" name="yzcode" type="text" maxlength="6"
+                           #yzcode="ngModel"  required  >
+                </ion-input>
+                <ion-input  *ngIf="signup.hiddenflag"  placeholder="请输入验证码" [(ngModel)]="signup.yzcode" name="yzcode" type="text" maxlength="6"
+                            #yzcode="ngModel" readonly="true" required  >
+                </ion-input>
+                <button ion-button [hidden]="signup.hiddenflag" item-right outline (click)="sendMsgCode()" style="width: 80px">{{countdown}}</button>
+            </ion-item>
+        </ion-list>
+
+        <div padding>
+            <button class="sumit_bnt" ion-button round default (click)="onSignup()" type="submit" block>下一步
+            </button>
+        </div>
+    </form>
+
+</ion-content>

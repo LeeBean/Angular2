@@ -1,0 +1,25 @@
+page-mystore {
+  .me-title{
+    color: red;
+  }
+  .me-card{
+    margin: 0;
+    padding:0;
+    width: 100%;
+    border-bottom: 0px;
+    margin-bottom: 10px;
+    box-shadow: none;
+  }
+  .me-card .item-inner{
+    border-bottom: none !important;
+  }
+  .warning{
+    padding: 0 10px 0 10px;
+    color: #666;
+    margin: 0;
+    font-size: 12px;
+  }
+  ion-list{
+    margin-bottom: 10px !important;
+  }
+}

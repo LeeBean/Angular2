@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar hideBackButton="true">
+    <ion-buttons left>
+      <button ion-button clear icon-only color="black" (click)="goBack()">
+        <ion-icon name="arrow-back"> </ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>余额提现</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+	<div class="card">
+		<div class="card_top">到账银行卡<span class="ob">{{mycard.bank_card}}（{{mycard.name}}）</span></div>
+    <div class="l_cash_bank_info">
+      <span class="l_cash_bank_info_span">提现金额</span>
+      <p class="l_cash_bank_info_num">
+        <span style="display: inline-block;line-height: 50px;">¥</span>
+        <input type="tel" pattern="[0-9]*" [(ngModel)]="withdraw.txje"  style=" width: 60%; position: absolute;border: 0;top: 0px;margin-left: 10px;">
+      </p>
+    </div>
+		<div class="card_foot"><p class="foot">账号余额￥{{mycard.balance}}.<span class="foot_s" tappable="true" (click)="withdrawAll()">全部提现</span></p></div>
+	</div>
+	<div class="btn_div">
+		<button class="btn" (click)="dowidthdraw()">提现</button>
+	</div>
+</ion-content>

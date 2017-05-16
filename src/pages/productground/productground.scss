@@ -1,0 +1,81 @@
+page-productground {
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  .texts {
+    width: 100%;
+    background: #fff;
+    height: 110px;
+  }
+  ul {
+    margin-top: 10px;
+    margin-bottom: 0px;
+    padding-left: 0px;
+  }
+  li {
+    list-style-type: none;
+    width: 100%;
+    background: #fff;
+    height: 50px;
+    line-height: 50px;
+    padding-left: 20px;
+    border-bottom: 1px solid #eee;
+  }
+  .left {
+    float: left;
+    width: 90px;
+  }
+  span.mi {
+    margin-right: 10px;
+    margin-left: 5px;
+  }
+  input.num {
+    border: 0;
+    line-height: 30px;
+    color: #999;
+  }
+  input.nums {
+    border: 0;
+    line-height: 30px;
+  }
+  .shangjia2 {
+    background-color: #fff;
+    float: left;
+  }
+  .shangjiaimg {
+    width: 100px;
+    height: 100px;
+    padding: 10px;
+  }
+  .shangjianame {
+    padding-top: 20px;
+  }
+  .sjname {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    word-break: break-all;
+  }
+  .foot {
+    position: fixed;
+    width: 100%;
+    background: #fff;
+    height: 50px;
+    bottom: 0;
+    z-index: 999;
+  }
+  .dlbnt {
+    color: #fff;
+    background-color: #fe5000;
+    width: 100px;
+    height: 35px;
+    border: 0;
+    margin: 10px;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    font-size: 14px;
+    line-height: 35px;
+    text-align: center;
+  }
+}

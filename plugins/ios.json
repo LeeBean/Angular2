@@ -1,0 +1,33 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "com.ionicframework.jkd876049"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.ionicframework.jkd876049"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.ionicframework.jkd876049"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.ionicframework.jkd876049"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.ionicframework.jkd876049"
+        },
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "com.ionicframework.jkd876049"
+        },
+        "cordova-plugin-jkd": {
+            "PACKAGE_NAME": "com.ionicframework.jkd876049"
+        }
+    },
+    "dependent_plugins": {}
+}

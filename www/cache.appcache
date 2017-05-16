@@ -1,0 +1,15 @@
+CACHE MANIFEST
+
+# VERSION 0.3
+
+# 2016-8-8 16.12245231213
+CACHE:
+build/main.css
+assets/css/style.css
+cordova.js
+build/polyfills.js
+
+NETWORK:
+*
+
+FALLBACK:

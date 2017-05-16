@@ -1,0 +1,51 @@
+<ion-header>
+    <ion-navbar hideBackButton="true">
+        <ion-buttons left>
+            <button ion-button clear icon-only color="black" (click)="goBack()">
+                <ion-icon name="arrow-back"></ion-icon>
+            </button>
+        </ion-buttons>
+        <ion-title>查看物流</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <div  *ngFor="let item of package.orderList;let i = index">
+        <div>
+            <div class="chakan_baoguo">
+                <div class="x-innerhtml">
+                    <div class="baoguo_one" data-tanum="0">包裹{{i+1}}</div>
+                </div>
+            </div>
+            <div class="chakan_shangpin" *ngIf="item.products.length > 0">
+                <div class="left_div">
+                  <img src="{{item.products[0].image}}">
+                </div>
+                <div class="right_div">
+                    <div class="right_div_one">
+                        <div class="mhp_up">{{item.products[0].name}}</div>
+                    </div>
+                    <div class="price"></div>
+                    <div class="amount">x{{item.products[0].pro_num}}</div>
+                    <div class="qiaokeli"></div>
+                </div>
+            </div>
+        </div>
+        <div class="dingdan_xiangqing">
+            <div class="lilos">包裹{{i+1}}: <span class="wipin">{{item.num}}件物品</span></div>
+            <div class="lilos">物流消息: <span class="wipin">{{item.com}}</span></div>
+            <div class="lilos">订单编号: <span class="wipin">{{item.codenumber}}</span></div>
+        </div>
+        <div class="wuliu_xiaoxi" *ngIf="item.data.length > 0">
+            <div class="vertical"></div>
+            <div class="wuliu_xiaoxi_t">
+                <div class="silens" *ngFor="let wl of item.data">
+                    <div class="last_wuliu">{{wl.context}}</div>
+                    <div class="last_wuliu_time">{{wl.time == 0 ? "--" : (wl.time|date:'yyyy-MM-dd HH:mm:ss')}}</div>
+                    <div class="round">●</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</ion-content>

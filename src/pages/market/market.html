@@ -1,0 +1,83 @@
+<!--<ion-header>
+    <ion-navbar hideBackButton="true">
+        <ion-searchbar readonly (click)="goSearch()" placeholder="请输入搜索关键字"></ion-searchbar>
+        <div class="l_search_content_qx">
+            <span id="l_search_qx_js" class="icon-type" style="font-size: 18px;" tappable="true" (click)="goType()"></span>
+        </div>
+        <ion-toolbar no-border-top>
+
+            <ion-scroll scrollX="true" zoom="true">
+                <ion-row>
+                    <ion-col *ngFor="let item of channelList let i =index" width-20 class="{{i!=classIndex ? '' : 'bottomboder'}}" tappable="true" (click)="changeTab(i,item.channel_id)">
+                        {{item.channel_name}}
+                    </ion-col>
+
+                </ion-row>
+            </ion-scroll>
+        </ion-toolbar>
+    </ion-navbar>
+</ion-header>-->
+<ion-header>
+    <ion-searchbar readonly (click)="goSearch()" placeholder="请输入搜索关键字"></ion-searchbar>
+    <div class="l_search_content_qx">
+        <span id="l_search_qx_js" class="icon-type" style="font-size: 18px;" tappable="true" (click)="goType()"></span>
+    </div>
+    <ion-toolbar no-border-top>
+
+        <ion-scroll scrollX="true" zoom="true">
+            <ion-row>
+                <ion-col *ngFor="let item of channelList let i =index" width-20 class="{{i!=classIndex ? '' : 'bottomboder'}}" tappable="true" (click)="changeTab(i,item.channel_id)">
+                    {{item.channel_name}}
+                </ion-col>
+
+            </ion-row>
+        </ion-scroll>
+    </ion-toolbar>
+
+</ion-header>
+<ion-content>
+    <div *ngFor="let item of itemDataList">
+        <div *ngIf="item.type == '0' && item.attribute =='0'" style="width: 100%;height: 230px">
+            <ion-slides #mySlide pager loop="true" autoplay="3000">
+                <ion-slide *ngFor="let banner of item.contents">
+                    <img src="{{banner.picture_icon}}" tappable="true" (click)="goToSlide(banner)" style="width:100%;height:100%;">
+                </ion-slide>
+            </ion-slides>
+        </div>
+
+        <div *ngIf="item.type == '1'" style="width: 100% !important; background: rgb(255, 255, 255); overflow: hidden; padding: 20px 5px 10px; border-bottom: 1px solid rgb(238, 238, 238);">
+            <div class="activeicon" *ngFor="let icons of item.contents">
+                <p>
+                    <img src="{{icons.picture_icon}}" tappable="true" (click)="goToTab(icons)" class="activeiconimg">
+                </p>
+                <p>{{icons.title}}</p>
+            </div>
+        </div>
+        <img *ngIf="item.type == '0' && item.attribute !='0'" src="{{item.picture}}" tappable="true" (click)="goToPic(item)" />
+
+        <ion-list *ngIf="item.type == '3'" style="margin: 0;margin-bottom: 20px;">
+            <div class="list_div" *ngFor="let product of item.contents">
+                <div class="list_div_img" tappable="true" (click)="productdetail(product.product_id,1)">
+                    <img src="{{product.image}}" class="shop_info_img">
+                </div>
+                <div class="list_shop_txt">
+                    <p class="list_shop_txt_p" tappable="true" (click)="productdetail(product.product_id,1)">{{product.product_name}}</p>
+                    <p class="j" style="padding-top: 63px; margin: 5px;">
+                        <span style="color:#333;">¥{{product.product_cost}}</span>/<span>赚¥{{product.product_profit}}</span>
+                    </p>
+
+                    <p class="k">已分销{{product.fx_number}}</p>
+                    <img class="woyaodaili" *ngIf="product.isdaili == '0'" src="assets/images/icon_tianjia.png" tappable="true" (click)="oprProduct(product)">
+                    <img class="woyaodaili" *ngIf="product.isdaili == '1'" src="assets/images/icon_jian.png" tappable="true" (click)="oprProduct(product)">
+                    <img class="zjshop" src="assets/images/icon_pic.png" tappable="true" (click)="productdetail(product.product_id,2)">
+                    <img class="fxshop" src="assets/images/icon_fenxiang.png" tappable="true" (click)="shareMarketProduct(product)">
+                </div>
+            </div>
+        </ion-list>
+    </div>
+    <div [hidden]="isshowbottom" class="bottompop">
+        <button class="bbnt borderright" (click)="closebottom()">关闭</button>
+        <button class="bbnt borderright" (click)="goproduct()">商品（18）</button>
+        <button class="bbnt" (click)="pmanagent()">管理</button>
+    </div>
+</ion-content>

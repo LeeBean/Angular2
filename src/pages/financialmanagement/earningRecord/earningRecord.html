@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar hideBackButton="true">
+    <ion-buttons left>
+      <button ion-button clear icon-only color="black" (click)="goBack()">
+        <ion-icon name="arrow-back"> </ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>财务管理</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="trad()">
+        <ion-icon>收益记录</ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-item class="sy">
+	  <div>
+	  	<p class="sy_txt">可提现(元)</p>
+	  	<p class="sy_num">{{finance.ketixian}}</p>
+	  </div>
+  </ion-item>
+  
+  <ion-list  style="margin-top: 10px;">
+      <button ion-item (click)="dofinance()">提现</button>
+      <button ion-item (click)="trad2()"><div class="txt">交易中<p class="txt_sm">进行中的交易</p></div><span class="right" style="margin-top: 6px;">￥{{finance.jiaoyizhong}}</span></button>
+      <button ion-item (click)="withd()">已提现<span class="right">￥{{finance.withdrawal_amount}}</span></button>
+      <button ion-item (click)="profit()" style="margin-top: 10px;">我的银行卡</button>
+  </ion-list>
+</ion-content>

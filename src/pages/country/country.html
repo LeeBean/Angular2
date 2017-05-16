@@ -1,0 +1,87 @@
+<ion-header>
+  <ion-navbar hideBackButton="true">
+    <ion-buttons left>
+      <button ion-button clear icon-only color="black" (click)="goBack()">
+        <ion-icon name="arrow-back"> </ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>选择国家</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item-group >
+      <ion-item-divider sticky>
+        <ion-label>
+          A
+        </ion-label>
+      </ion-item-divider>
+
+      <ion-item-sliding >
+        <button ion-item (click)="checkCountry('澳大利亚','+0061')">
+          <p>
+           澳大利亚
+          </p>
+        </button>
+      </ion-item-sliding>
+      <ion-item-divider sticky>
+        <ion-label>
+          J
+        </ion-label>
+      </ion-item-divider>
+      <ion-item-sliding >
+        <button ion-item  (click)="checkCountry('加拿大','+1')">
+          <p>
+            加拿大
+          </p>
+        </button>
+      </ion-item-sliding>
+
+      <ion-item-divider sticky>
+        <ion-label>
+          M
+        </ion-label>
+      </ion-item-divider>
+
+      <ion-item-sliding >
+        <button ion-item  (click)="checkCountry('美国','+1')">
+          <p>
+           美国
+          </p>
+        </button>
+      </ion-item-sliding>
+
+      <ion-item-divider sticky>
+        <ion-label>
+          X
+        </ion-label>
+      </ion-item-divider>
+      <ion-item-sliding >
+        <button ion-item  (click)="checkCountry('新西兰','+0064')">
+          <p>
+           新西兰
+          </p>
+        </button>
+      </ion-item-sliding>
+
+      <ion-item-divider sticky>
+        <ion-label>
+          Z
+        </ion-label>
+      </ion-item-divider>
+      <ion-item-sliding >
+        <button ion-item  (click)="checkCountry('中国','+86')">
+          <p>
+           中国
+          </p>
+        </button>
+      </ion-item-sliding>
+
+    </ion-item-group>
+
+  </ion-list>
+
+
+
+</ion-content>
