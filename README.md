@@ -1,11 +1,12 @@
 npm install -g ionic
+
 npm install -g cordova
 
 cd angular2
 
 npm install
 
-ionic serve
+运行：ionic serve
 
 
 
